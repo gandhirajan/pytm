@@ -1587,5 +1587,35 @@
     "mitigations": "All passwords and other credentials should have a relatively short expiration date with a possibility to be revoked immediately under special circumstances.",
     "example": "",
     "references": "https://cwe.mitre.org/data/definitions/262.html, https://cwe.mitre.org/data/definitions/263.html, https://cwe.mitre.org/data/definitions/798.html"
+  },
+  {
+    "SID": "GAT01",
+    "target": [
+      "Gateway"
+    ],
+    "description": "Denial of Service (DoS) Attack",
+    "details": "An attacker could overwhelm the gateway with a large amount of traffic, causing it to become unresponsive to legitimate requests.",
+    "Likelihood Of Attack": "Medium",
+    "severity": "High",
+    "condition": "target.implementsAPI is True",
+    "prerequisites": "The gateway does not have rate limiting or other traffic control measures in place.",
+    "mitigations": "Implement rate limiting and traffic control measures to prevent the gateway from being overwhelmed by a large amount of traffic.",
+    "example": "An attacker could send a large number of requests to the gateway in a short period of time, causing it to become unresponsive.",
+    "references": "https://capec.mitre.org/data/definitions/130.html, http://cwe.mitre.org/data/definitions/400.html"
+  },
+  {
+    "SID": "GAT02",
+    "target": [
+      "Gateway"
+    ],
+    "description": "Gateway Misconfiguration",
+    "details": "An attacker could exploit a misconfiguration in the gateway to gain unauthorized access to internal resources.",
+    "Likelihood Of Attack": "Medium",
+    "severity": "High",
+    "condition": "target.controls.isHardened is False",
+    "prerequisites": "The gateway is not properly configured, leaving it vulnerable to unauthorized access.",
+    "mitigations": "Ensure the gateway is properly configured and regularly review and update the configuration as necessary.",
+    "example": "An attacker could exploit a misconfigured gateway to bypass security measures and gain access to internal resources.",
+    "references": "https://capec.mitre.org/data/definitions/460.html, http://cwe.mitre.org/data/definitions/16.html"
   }
 ]
